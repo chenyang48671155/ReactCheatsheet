@@ -1,0 +1,13 @@
+create-react-app
+  create-react-app YOUR_APP_NAME
+
+
+
+------------------------------------------------------------------------------------------
+Stateless componentStateless component
+import React from 'react'
+
+const YourComponent = () => <div>aaa</div>
+
+export default YourComponentimport React from 'react'
+
