@@ -11,3 +11,16 @@ const YourComponent = () => <div>aaa</div>
 
 export default YourComponentimport React from 'react'
 
+
+------------------------------------------------------------------------------------------
+Class component
+
+import React from 'react'
+
+class YourComponent extends React.Component {
+  render() {
+    return <div>aaa</div>
+  }
+}
+
+export default YourComponent
