@@ -40,3 +40,87 @@ const YourComponent = ({ propExample1, example2 }) => (
 )
 
 // <YourComponent propExample1="aaa" example2="bbb" />
+
+
+------------------------------------------------------------------------------------------
+Properties in class component
+
+class YourComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>
+          properties from parent component:
+        </h1>
+        <ul>
+          <li>{this.props.propExample1}</li>
+          <li>{this.props.example2}</li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+------------------------------------------------------------------------------------------
+Children
+
+const Component1 = (props) => (
+  <div>{props.children}</div>
+)
+
+const Component2 = () => (
+  <Component1>
+    <h1>Component 1</h1>
+  </Component1>
+)
+
+
+------------------------------------------------------------------------------------------
+State
+
+class CountClicks extends React.Component {
+  state = {
+    clicks: 0
+  }
+
+  onButtonClick = () => {
+    this.setState(prevState => ({
+      clicks: prevState.clicks + 1
+    }))
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.onButtonClick}>
+          Click me
+        </button>
+        <span>
+          The button clicked 
+          {this.state.clicks} times.
+        </span>
+      </div>
+    )
+  }
+}
+
+
+-------------------------------------------------------------------------------------------
+React Router
+
+import { 
+  BrowserRouter, 
+  Route 
+} from 'react-router-dom'
+
+const Hello = () => <h1>Hello world!</h1>
+
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <Route path="/hello" component={Hello}/>
+    </div>
+  </BrowserRouter>
+)
+
+// open: http://localhost:3000/hello
